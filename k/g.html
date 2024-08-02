@@ -51,6 +51,8 @@
         <button id="loginButton">Login</button>
         <p id="chineseName"></p>
         <p id="ocardvipurl"></p>
+        <button id="gotoUrlButton">GoToUrl</button>
+
     </div>
 
     <script type="module">
@@ -139,11 +141,11 @@
         loginButton.addEventListener('click', login);
 
         //window.location.href = targetUrl;
-        const button = document.createElement('button');
-        button.textContent = chineseNameDisplay.textContent;
+        const goturul = document.createElement('gotoUrlButton');
+        goturul.textContent = chineseNameDisplay.textContent;
 
         // Add a click event listener to redirect to the user's URL
-        button.addEventListener('click', () => {
+        goturul.addEventListener('click', () => {
             window.location.href = targetUrl;
         });
 
