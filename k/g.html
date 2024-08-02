@@ -46,7 +46,7 @@
 
 <body>
     <div class="login-container">
-        <h2>Login 10:36</h2>
+        <h2>Login 10:38</h2>
         <input type="text" id="username" placeholder="Enter your username" required>
         <button id="loginButton">Login</button>
         <p id="chineseName"></p>
@@ -132,7 +132,14 @@
             const targetUrl = `https://crm-api.ocard.co/thirdParty/auth/kyeckingyuan?s=${encodeURIComponent(jwt)}`;
             ocardvipurl.textContent = targetUrl;
 
+            //window.location.href = targetUrl;
+            const goturul = document.createElement('gotoUrlButton');
+            goturul.textContent = chineseName.textContent;
 
+            // Add a click event listener to redirect to the user's URL
+            goturul.addEventListener('click', () => {
+                window.location.href = ocardvipurl.textContent;
+            });
         }
         // Assign login function to the global scope
         window.login = login;
@@ -141,14 +148,7 @@
         const loginButton = document.getElementById('loginButton');
         loginButton.addEventListener('click', login);
 
-        //window.location.href = targetUrl;
-        const goturul = document.createElement('gotoUrlButton');
-        goturul.textContent = chineseName.textContent;
 
-        // Add a click event listener to redirect to the user's URL
-        goturul.addEventListener('click', () => {
-            window.location.href = ocardvipurl.textContent;
-        });
 
     </script>
 
