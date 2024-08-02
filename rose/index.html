@@ -104,7 +104,7 @@
             // Find the user in the list
             const user = userList.find(u => u.username === username);
 
-            if (user) {
+            //if (user) {
                 // Display Chinese name
                 chineseNameDisplay.textContent = `Welcome, ${user.chineseName}!`;
                 alert (chineseNameDisplay.textContent);
@@ -116,10 +116,12 @@
                 chineseNameDisplay.textContent = targetUrl;
 
                 //window.location.href = targetUrl;
-            } else {
-                alert('Login failed: Username not found.');
-                chineseNameDisplay.textContent = ''; // Clear the display
-            }
+            //} else {
+            //    alert('Login failed: Username not found.');
+            //    chineseNameDisplay.textContent = ''; // Clear the display
+            //}
+
+
         }
 
         // Assign login function to the global scope
