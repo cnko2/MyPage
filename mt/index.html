@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用戶列表按鈕</title>
+</head>
+<body>
+    <div id="buttonContainer"></div>
+
+    <script type="module">
+        import { userList } from './userList.js';
+
+        // Function to create a button for each user
+        function createButtons() {
+            const buttonContainer = document.getElementById('buttonContainer');
+
+            userList.forEach(user => {
+                const button = document.createElement('button');
+                button.textContent = user.chineseName;
+
+                // Add a click event listener to redirect to the user's URL
+                button.addEventListener('click', () => {
+                    if (user.url) {
+                        window.location.href = user.url;
+                    } else {
+                        alert('此用戶沒有有效的 URL');
+                    }
+                });
+
+                // Add the button to the container
+                buttonContainer.appendChild(button);
+            });
+        }
+
+        // Call the function to create buttons
+        createButtons();
+    </script>
+</body>
+</html>
