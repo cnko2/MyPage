@@ -113,11 +113,10 @@
             const user = userList.find(u => u.username === username);
 
             // Display Chinese name
-            if(user) {
-            chineseNameDisplay.textContent = `Welcome, ${user.chineseName}!`;
+            if (user) {
+                chineseNameDisplay.textContent = `Welcome, ${user.chineseName}!`;
             }
-            else
-            {
+            else {
                 chineseNameDisplay.textContent = `not found user`;
             }
             // Create JWT
@@ -127,14 +126,7 @@
             const targetUrl = `https://crm-api.ocard.co/thirdParty/auth/kyeckingyuan?s=${encodeURIComponent(jwt)}`;
             ocardvipurl.textContent = targetUrl;
 
-            //window.location.href = targetUrl;
-            const button = document.createElement('button');
-            button.textContent = user.chineseName;
 
-            // Add a click event listener to redirect to the user's URL
-            button.addEventListener('click', () => {
-                    window.location.href = targetUrl;
-            });
         }
 
         // Assign login function to the global scope
@@ -143,6 +135,15 @@
         // Alternatively, add an event listener to the button
         const loginButton = document.getElementById('loginButton');
         loginButton.addEventListener('click', login);
+
+        //window.location.href = targetUrl;
+        const button = document.createElement('button');
+        button.textContent = user.chineseName;
+
+        // Add a click event listener to redirect to the user's URL
+        button.addEventListener('click', () => {
+            window.location.href = targetUrl;
+        });
 
     </script>
 
