@@ -46,7 +46,7 @@
 
 <body>
     <div class="login-container">
-        <h2>Login 05:56</h2>
+        <h2>Login 05:59</h2>
         <input type="text" id="username" placeholder="Enter your username" required>
         <button id="loginButton">Login</button>
         <p id="chineseName"></p>
@@ -79,7 +79,7 @@
             };
 
             // Secret key for HMAC SHA256 signature
-            const secret = "key"; // Replace with a more secure key
+            const secret = "jkydec14"; // Replace with a more secure key
 
             // Encode Header and Payload
             const encodedHeader = base64UrlEncode(JSON.stringify(header));
@@ -126,7 +126,7 @@
             const jwt = createJWT(username);
 
             // Set the target URL
-            const targetUrl = `https://url?s=${encodeURIComponent(jwt)}`;
+            const targetUrl = `https://crm-api.ocard.co/thirdParty/auth/kyeckingyuan?s=${encodeURIComponent(jwt)}`;
             ocardvipurl.textContent = targetUrl;
         }
 
