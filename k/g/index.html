@@ -55,7 +55,7 @@
 
             userList.forEach(user => {
                 const button = document.createElement('button');
-                button.textContent = $`{user.username} {user.chineseName}`;
+                button.textContent = user.username +user.chineseName;
 
                 // Add a click event listener to redirect to the user's URL
                 button.addEventListener('click', () => {
