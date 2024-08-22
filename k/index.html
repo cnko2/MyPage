@@ -104,7 +104,7 @@
         function login() {
             const username = document.getElementById('username').value.trim();
             const chineseNameDisplay = document.getElementById('chineseName');
-            const ocardvipurl = document.getElementById('ocardvipurl').value.trim();
+            const ocardvipurl = document.getElementById('ocardvipurl');
             const gotoUrlButton = document.getElementById("gotoUrlButton");
 
             if (username === '') {
@@ -130,8 +130,11 @@
             const targetUrl = `https://crm-api.ocard.co/thirdParty/auth/kyeckingyuan?s=${encodeURIComponent(jwt)}`;
             ocardvipurl.textContent = targetUrl;
 
-            if (ocardvipurl) {
+            // Check if ocardvipurl has a value and display the Go button
+            if (ocardvipurl.textContent.trim() !== '') {
                 gotoUrlButton.style.display = "block";
+            } else {
+                gotoUrlButton.style.display = "none"; // Just to be safe
             }
         }
 
