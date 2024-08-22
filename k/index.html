@@ -51,7 +51,7 @@
         <button id="loginButton">Login</button>
         <p id="chineseName"></p>
         <p id="ocardvipurl"  style="display: none;"></p>
-        <button id="gotoUrlButton">Go</button>
+        <button id="gotoUrlButton"  style="display: none;">Go</button>
     </div>
 
     <script type="module">
@@ -104,7 +104,8 @@
         function login() {
             const username = document.getElementById('username').value.trim();
             const chineseNameDisplay = document.getElementById('chineseName');
-            const ocardvipurl = document.getElementById('ocardvipurl');
+            const ocardvipurl = document.getElementById('ocardvipurl').value.trim();
+            const gotoUrlButton = document.getElementById("gotoUrlButton");
 
             if (username === '') {
                 alert('Please enter your id.');
@@ -128,6 +129,10 @@
             // Set the target URL
             const targetUrl = `https://crm-api.ocard.co/thirdParty/auth/kyeckingyuan?s=${encodeURIComponent(jwt)}`;
             ocardvipurl.textContent = targetUrl;
+
+            if (ocardvipurl) {
+                gotoUrlButton.style.display = "block";
+            }
         }
 
         // Assign login function to the global scope
