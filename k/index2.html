@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,49 +13,38 @@
             height: 100vh;
             margin: 0;
         }
-
         .login-container {
             border: 1px solid #ccc;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        input[type="text"],
-        button {
+        input[type="text"], button {
             display: block;
             width: 100%;
             margin: 10px 0;
             padding: 10px;
             font-size: 16px;
         }
-
         button {
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
         }
-
         button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
-
 <body>
     <div class="login-container">
-        <h2>Login 05:59</h2>
+        <h2>Login</h2>
         <input type="text" id="username" placeholder="Enter your username" required>
-        <button id="loginButton">Login</button>
-        <p id="chineseName"></p>
-        <p id="ocardvipurl"></p>
-        <button id="gotoUrlButton">GoToUrl</button>
+        <button onclick="login()">Login</button>
     </div>
 
-    <script type="module">
-        import { userList } from '../k/userList.js';
-
+    <script>
         // Function to encode base64 URL
         function base64UrlEncode(str) {
             return btoa(unescape(encodeURIComponent(str)))
@@ -72,7 +60,7 @@
                 alg: "HS256",
                 typ: "JWT"
             };
-
+            
             // JWT payload
             const payload = {
                 serial: username
@@ -90,7 +78,7 @@
                 `${encodedHeader}.${encodedPayload}`,
                 secret
             );
-
+            
             const encodedSignature = signature.toString(CryptoJS.enc.Base64)
                 .replace(/\+/g, '-')
                 .replace(/\//g, '_')
@@ -103,55 +91,22 @@
         // Function to handle login and redirection
         function login() {
             const username = document.getElementById('username').value.trim();
-            const chineseNameDisplay = document.getElementById('chineseName');
-            const ocardvipurl = document.getElementById('ocardvipurl');
 
             if (username === '') {
                 alert('Please enter your username.');
                 return;
             }
 
-            // Find the user in the list
-            const user = userList.find(u => u.username === username);
-
-            // Display Chinese name
-            if (user) {
-                chineseNameDisplay.textContent = `Welcome, ${user.chineseName}!`;
-            } else {
-                chineseNameDisplay.textContent = `User not found`;
-                return; // Exit the function if the user is not found
-            }
-
             // Create JWT
             const jwt = createJWT(username);
 
-            // Set the target URL
+            // Redirect to site1 with parameters
             const targetUrl = `https://crm-api.ocard.co/thirdParty/auth/kyeckingyuan?s=${encodeURIComponent(jwt)}`;
-            ocardvipurl.textContent = targetUrl;
+            window.location.href = targetUrl;
         }
-
-        // Assign login function to the global scope
-        window.login = login;
-
-        // Add an event listener to the login button
-        const loginButton = document.getElementById('loginButton');
-        loginButton.addEventListener('click', login);
-
-        // Add an event listener to the gotoUrlButton
-        const gotoUrlButton = document.getElementById('gotoUrlButton');
-        gotoUrlButton.addEventListener('click', () => {
-            const ocardvipurl = document.getElementById('ocardvipurl').textContent;
-            if (ocardvipurl) {
-                window.location.href = ocardvipurl;
-            } else {
-                alert('No URL available. Please login first.');
-            }
-        });
-
     </script>
 
     <!-- Include CryptoJS library for hashing -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </body>
-
 </html>
