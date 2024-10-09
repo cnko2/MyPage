@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CISSP Security Domains</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .domain-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .domain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .domain-number {
+            color: #4299e1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .domain-title {
+            color: #2d3748;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .learn-more:hover {
+            color: #2b6cb0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CISSP Security Domains</h1>
+        <div class="domains-grid">
+            <div class="domain-card">
+                <div class="domain-number">Domain 1</div>
+                <div class="domain-title">Security and Risk Management</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 2</div>
+                <div class="domain-title">Asset Security</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 3</div>
+                <div class="domain-title">Security Architecture and Engineering</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 4</div>
+                <div class="domain-title">Communication and Network Security</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 5</div>
+                <div class="domain-title">Identity and Access Management</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 6</div>
+                <div class="domain-title">Security Assessment and Testing</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 7</div>
+                <div class="domain-title">Security Operations</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 8</div>
+                <div class="domain-title">Software Development Security</div>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
