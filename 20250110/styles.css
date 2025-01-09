@@ -22,6 +22,7 @@ h1 {
 
 .search-container {
     display: flex; /* 使用 flexbox 將按鈕放在輸入框旁邊 */
+    align-items: center; /* 垂直居中對齊 */
 }
 
 input[type="text"] {
@@ -32,6 +33,12 @@ input[type="text"] {
 
 button {
     padding: 8px; /* 減少內邊距 */
+}
+
+.clear-icon {
+    cursor: pointer; /* 鼠標懸停時顯示為可點擊 */
+    margin-left: 5px; /* 與按鈕之間的間距 */
+    font-size: 16px; /* 清除圖示字體大小 */
 }
 
 #result {
@@ -53,11 +60,24 @@ th, td {
     font-size: 14px; /* 縮小字體大小 */
 }
 
-th {
-    background-color: #f2f2f2;
-}
-
 /* 額外樣式，讓位置資訊的表格以橫向方式顯示 */
 .location-info th, .location-info td {
     text-align: center; /* 中央對齊 */
+}
+
+/* 自定義顏色樣式 */
+.attending-yes {
+    background-color: #cce5ff; /* 藍色背景 */
+}
+
+.attending-no {
+    background-color: #f8d7da; /* 淡紅色背景 */
+}
+
+.diet-vegetarian {
+    color: red; /* 素食顯示紅色 */
+}
+
+.diet-meat {
+    color: blue; /* 葷食顯示藍色 */
 }

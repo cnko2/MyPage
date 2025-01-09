@@ -6,6 +6,10 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
     }
 });
 
+document.getElementById('clearIcon').addEventListener('click', function() {
+    document.getElementById('searchInput').value = ''; // 清空輸入框
+});
+
 function searchEmployees() {
     const input = document.getElementById('searchInput').value.toLowerCase();
     const resultDiv = document.getElementById('result');
@@ -20,9 +24,14 @@ function searchEmployees() {
 
     if (filteredEmployees.length > 0) {
         filteredEmployees.forEach(employee => {
+            // 根據參加年終晚會的狀態設置類別
+            const attendingClass = employee.是否參加年終晚會 === '是' ? 'attending-yes' : 'attending-no';
+            // 根據飲食習慣設置類別
+            const dietClass = employee.飲食習慣 === '素食' ? 'diet-vegetarian' : 'diet-meat';
+
             resultDiv.innerHTML += `
                 <!--<h2>搜尋結果:</h2>-->
-                <table>
+                <table class="${attendingClass}">
                     <tr>
                         <th>序號</th>
                         <td>${employee.序號}</td>
@@ -51,7 +60,7 @@ function searchEmployees() {
                         <th>是否參加年終晚會</th>
                         <td>${employee.是否參加年終晚會}</td>
                     </tr>
-                    <tr>
+                    <tr class="${dietClass}">
                         <th>飲食習慣</th>
                         <td>${employee.飲食習慣}</td>
                     </tr>
@@ -65,7 +74,7 @@ function searchEmployees() {
                     </tr>
                 </table>
 
-                <!--<h3>位置資訊</h3>-->
+                <h4>位置資訊</h4>
                 <table class="location-info">
                     <tr><th>方向</th><th>樓</th><th>區</th><th>排</th><th>號</th></tr>
                     <tr><td>${employee.方向}</td><td>${employee.樓}</td><td>${employee.區}</td><td>${employee.排}</td><td>${employee.號}</td></tr></table>`;
