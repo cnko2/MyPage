@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CISSP Security Domains</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .domain-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .domain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .domain-number {
+            color: #4299e1;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .domain-title {
+            color: #2d3748;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .learn-more {
+            color: #4299e1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .learn-more:hover {
+            color: #2b6cb0;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CISSP Security Domains</h1>
+        <div class="domains-grid">
+            <div class="domain-card">
+                <div class="domain-number">Domain 1</div>
+                <div class="domain-title">Security and Risk Management</div>
+                <a href="https://cl.s12.exct.net/?qs=2467e5020e7b1185c6cba967b797d677d9e42efeda0d109d088e04d00d5a7584394881eec196c9fe6f1bde0355f2d2d89a942aae6d711d57a9a892110fb28045"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 2</div>
+                <div class="domain-title">Asset Security</div>
+                <a href="https://cl.s12.exct.net/?qs=c363cee38dd2bc470f78c398db6a35e5fc393749144e25dab89ffb67751bd625f84712781574cc5b7c614d2e27f237fe4c6c42f61ed219e46e82ea2ddf66a2fc"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 3</div>
+                <div class="domain-title">Security Architecture and Engineering</div>
+                <a href="https://cl.s12.exct.net/?qs=984cb4ca594614d5d25606ec89dc2d9669f1dd7b58a1a677bdce97bc8ad4a152fc106c46b85b50917739a5442eb9d673674efe725e8a002393006b50f3cf2285"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 4</div>
+                <div class="domain-title">Communication and Network Security</div>
+                <a href="https://cl.s12.exct.net/?qs=7dee2b75fc0eac56b36efbe2dcafb227f4b3d56a93ff609c78fa40ebadda31e2a9923b726923ffaa7f33af1515cfb707cf3d0323383eef72e612239afe5e8816"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 5</div>
+                <div class="domain-title">Identity and Access Management</div>
+                <a href="https://cl.s12.exct.net/?qs=94f45ef96dd3de32bbd7fe4cc24ee43a13cb310a55fe6af5fba66c398141fb72292ff91aaaaa343ec46723fc764b7e365d3b90807a9cd0f13df8d04cc2b1f768"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 6</div>
+                <div class="domain-title">Security Assessment and Testing</div>
+                <a href="https://cl.s12.exct.net/?qs=b4963a45e0502b3712ea1c519933c78c9199ceb22d33729ba9647e02777ed952f512ceb38cd5fe040423bf054c68ac8ff896dae938ced7bf99faf1587269f42c"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 7</div>
+                <div class="domain-title">Security Operations</div>
+                <a href="https://cl.s12.exct.net/?qs=c982e9a50a6d786c8b6c53540b6517b944f78098f6115fa9a1ff489f2f653d4913eabfbc4ae641f84a517dc0e573205781d29f8491972445c43fdda46160c4ae"
+                    class="learn-more">Learn More →</a>
+            </div>
+            <div class="domain-card">
+                <div class="domain-number">Domain 8</div>
+                <div class="domain-title">Software Development Security</div>
+                <a href="https://cl.s12.exct.net/?qs=de86c111f58105fa74e028d4d3c0708ee4aa8abff427d38ef491682ca4f04f47c915c4843406506ebf26c67d4ce3c41083c32cdd0584a212f32ba629b438670e"
+                    class="learn-more">Learn More →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
