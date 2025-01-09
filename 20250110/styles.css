@@ -1,0 +1,63 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 10px; /* 減少內邊距 */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 20px; /* 縮小字體大小 */
+}
+
+.search-container {
+    display: flex; /* 使用 flexbox 將按鈕放在輸入框旁邊 */
+}
+
+input[type="text"] {
+    flex-grow: 1; /* 輸入框佔用剩餘空間 */
+    padding: 8px; /* 減少內邊距 */
+    margin-right: 5px; /* 按鈕與輸入框之間的間距 */
+}
+
+button {
+    padding: 8px; /* 減少內邊距 */
+}
+
+#result {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* 確保沒有間隙 */
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 4px; /* 減少單元格內部的間距 */
+    text-align: left;
+    font-size: 14px; /* 縮小字體大小 */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* 額外樣式，讓位置資訊的表格以橫向方式顯示 */
+.location-info th, .location-info td {
+    text-align: center; /* 中央對齊 */
+}
